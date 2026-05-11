@@ -1,0 +1,66 @@
+# ── MediAssist — Docker Compose ────────────────────────────────────────────────
+# Starts MediAssist API + Ollama together.
+# Usage: docker-compose up --build
+
+version: "3.9"
+
+services:
+
+  # ── Ollama — Local LLM Server ───────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mediassist-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # Pull Llama 3 on first start
+    entrypoint: ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull llama3 && wait"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  # ── MediAssist API ──────────────────────────────────────────────────────────
+  mediassist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mediassist-api
+    ports:
+      - "8000:8000"
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      OLLAMA_MODEL: llama3
+      EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      CHROMA_PERSIST_DIR: /app/vector_store
+      CHROMA_COLLECTION: healthcare_docs
+      DATA_DIR: /app/data
+      CHUNK_SIZE: "500"
+      CHUNK_OVERLAP: "80"
+      TOP_K_RESULTS: "4"
+      SIMILARITY_THRESHOLD: "0.35"
+      API_HOST: "0.0.0.0"
+      API_PORT: "8000"
+      LOG_LEVEL: INFO
+    volumes:
+      - vector_store_data:/app/vector_store
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  ollama_data:
+    driver: local
+  vector_store_data:
+    driver: local

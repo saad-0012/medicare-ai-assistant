@@ -1,0 +1,61 @@
+MEDICATION REFILL POLICY
+MediCare Health System — Pharmacy & Prescription Services
+Version: 3.0 | Effective Date: March 2024
+
+INTRODUCTION
+This document outlines the policies and procedures for medication refills at MediCare Health System. All prescription refills must comply with federal and state regulations and must be authorized by a licensed prescriber.
+
+GENERAL REFILL PROCEDURE
+1. Patients may request refills through the Patient Portal, via the pharmacy directly, or through a telehealth consultation.
+2. Refill requests should be submitted at least 5 business days before the medication runs out.
+3. The prescribing physician must authorize all refills before dispensing.
+4. Automated refill reminders are sent via SMS or email when a prescription has 7 days of supply remaining.
+
+REFILL CHANNELS
+a) Patient Portal: Log in at portal.medicare-hs.com > My Medications > Request Refill.
+b) Pharmacy Counter: Visit any MediCare-affiliated pharmacy with your prescription ID.
+c) Phone: Call the pharmacy helpline at 1800-MED-REFILL (1800-633-7345).
+d) Telehealth: Request during a scheduled telehealth consultation (non-controlled substances only).
+e) Mobile App: Use the MediCare mobile app under "Medications" section.
+
+CONTROLLED SUBSTANCE REFILL POLICY
+Controlled substances (Schedule II, III, IV) are subject to strict regulations:
+- Schedule II medications (e.g., Adderall, OxyContin, Ritalin) require a new written prescription each time. They cannot be refilled automatically or via telehealth.
+- Schedule III and IV medications may be refilled up to 5 times within 6 months of original prescription date.
+- Patients must present valid government-issued ID for controlled substance pick-up.
+- Early refills for controlled substances will not be honored unless there is documented loss, theft (with police report), or a physician's emergency override.
+
+CHRONIC DISEASE MEDICATION MANAGEMENT
+For patients on long-term medications for chronic conditions (diabetes, hypertension, thyroid disorders, asthma, etc.):
+- Prescriptions may be issued as 90-day supplies to reduce pharmacy visits.
+- Auto-refill enrollment is available for stable, non-controlled chronic medications.
+- Patients on long-term medications must have an annual review with their physician.
+- Any dosage changes must be authorized by the treating physician and cannot be processed by the pharmacy independently.
+
+INSURANCE AND COPAY INFORMATION
+- Refills covered by insurance: present insurance card at the time of pick-up.
+- If insurance does not cover a refill, patients will be informed of the out-of-pocket cost before dispensing.
+- Generic substitutions are offered when available and clinically appropriate unless the physician has specified "Dispense As Written" (DAW).
+
+MEDICATION INTERACTIONS AND ALLERGY ALERTS
+MediCare's pharmacy system automatically checks for:
+- Drug-drug interactions
+- Drug-allergy conflicts
+- Duplicate therapy alerts
+Pharmacists will contact the prescribing physician and patient if any significant alert is triggered before dispensing.
+
+MEDICATION EXPIRY AND DISPOSAL
+- Expired medications should not be taken. Return expired medications to the pharmacy for safe disposal.
+- MediCare pharmacies participate in the DEA Drug Take-Back Program for safe disposal of controlled substances.
+- Do not flush medications down the toilet unless specifically instructed on the label.
+
+EMERGENCY REFILLS
+In case of emergency (e.g., travel, natural disaster), a one-time emergency refill of a 3-day supply may be provided for non-controlled chronic medications at the pharmacist's discretion.
+Emergency refills are not available for controlled substances.
+
+PRIOR AUTHORIZATION (PA)
+Some medications require prior authorization from the insurance provider before dispensing:
+- PA requests are initiated by MediCare's clinical team on behalf of the patient.
+- PA processing typically takes 1–3 business days.
+- Patients will be notified once PA is approved or denied.
+- Appeals for denied PAs can be submitted with supporting clinical documentation.

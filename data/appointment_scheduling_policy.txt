@@ -1,0 +1,76 @@
+APPOINTMENT SCHEDULING POLICY
+MediCare Health System — Outpatient Services
+Version: 2.3 | Effective Date: March 2024
+
+OVERVIEW
+MediCare Health System provides outpatient appointments across multiple specialties. This policy outlines the process for booking, rescheduling, and cancelling appointments, along with departmental availability.
+
+BOOKING AN APPOINTMENT
+Patients may book appointments through the following channels:
+1. Patient Portal: portal.medicare-hs.com — available 24/7 for self-service booking.
+2. MediCare Mobile App: Download on iOS or Android, then navigate to "Book Appointment".
+3. Phone: Call 1800-MED-APPT (1800-633-2778), available Mon–Sat, 8 AM–8 PM.
+4. In-Person: Visit the outpatient registration desk during working hours.
+5. Telehealth: Book virtual consultations separately through the telehealth module on the portal.
+
+INFORMATION REQUIRED FOR BOOKING
+When booking an appointment, the following information is required:
+- Patient full name and date of birth
+- Registered mobile number or email address
+- Preferred department and doctor (if specified)
+- Preferred date and time
+- Brief description of the reason for visit (optional but recommended for scheduling priority)
+- Insurance details (if applicable)
+
+DEPARTMENT-WISE AVAILABILITY
+Below is the standard schedule for outpatient departments. Schedules may vary on public holidays.
+
+Department          | Available Days            | Hours
+--------------------|---------------------------|------------------
+General Medicine    | Mon – Sat                 | 8:00 AM – 8:00 PM
+Cardiology          | Mon, Wed, Fri             | 10:00 AM – 2:00 PM
+Orthopedics         | Tue, Thu                  | 9:00 AM – 1:00 PM
+Dermatology         | Tue, Thu, Sat             | 10:00 AM – 4:00 PM
+Pediatrics          | Mon – Fri                 | 9:00 AM – 5:00 PM
+Endocrinology       | Mon, Wed, Fri             | 11:00 AM – 3:00 PM
+Neurology           | Mon, Thu                  | 10:00 AM – 1:00 PM
+Gynecology          | Mon – Sat                 | 9:00 AM – 5:00 PM
+Mental Health       | Mon – Fri                 | 9:00 AM – 6:00 PM
+Ophthalmology       | Tue, Wed, Fri             | 10:00 AM – 3:00 PM
+ENT                 | Mon, Wed, Sat             | 9:00 AM – 1:00 PM
+Oncology            | Mon – Thu                 | 9:00 AM – 2:00 PM
+
+APPOINTMENT CONFIRMATION
+- Upon successful booking, patients receive a confirmation via SMS and email.
+- Confirmation includes: appointment date, time, department, doctor name, location, and preparation instructions if applicable.
+- Patients are requested to arrive 15 minutes early to complete registration formalities.
+
+RESCHEDULING AN APPOINTMENT
+- Appointments may be rescheduled up to 6 hours before the scheduled time without penalty.
+- Rescheduling is available via the patient portal, app, or phone.
+- Patients are allowed up to 3 reschedules per appointment. After 3 reschedules, a new booking must be created.
+- For specialty appointments (Oncology, Cardiology, Neurology), rescheduling must be done at least 24 hours in advance.
+
+CANCELLATION POLICY
+- Appointments cancelled at least 6 hours in advance are fully refunded if a booking fee was paid.
+- Cancellations made within 6 hours of the appointment may forfeit the booking fee.
+- No-show appointments (patient does not arrive and does not cancel) will be marked in the patient record and may affect priority booking in the future.
+
+PRIORITY AND EMERGENCY APPOINTMENTS
+- For urgent but non-emergency medical concerns, patients may request a "Priority Appointment" by informing the booking agent of symptoms.
+- Triage nurses assess the urgency and may fast-track the appointment.
+- Medical emergencies must go directly to the Emergency Department — do not attempt to book an appointment for an emergency.
+
+WALK-IN POLICY
+Walk-in patients are accepted at General Medicine and Pediatrics departments on a first-come, first-served basis subject to doctor availability. Walk-in patients will be seen after all pre-booked patients for that slot. Waiting time for walk-ins may range from 30 minutes to 3 hours depending on patient load.
+
+SPECIAL REQUIREMENTS
+- Patients requiring interpreter services, wheelchair access, or other accommodations should inform the booking team at least 24 hours in advance.
+- Patients under 18 must be accompanied by a parent or legal guardian.
+- Patients above 70 years may request senior citizen priority lanes at the registration desk.
+
+APPOINTMENT REMINDERS
+- Automated reminder SMS sent 24 hours before the appointment.
+- Follow-up SMS sent 2 hours before the appointment.
+- Email reminder with pre-appointment checklist sent 48 hours in advance.
+- Patients can opt out of reminders via Patient Portal > Notification Settings.

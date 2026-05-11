@@ -1,0 +1,76 @@
+INSURANCE ELIGIBILITY FAQ
+MediCare Health System — Billing & Insurance Services
+Version: 1.8 | Effective Date: April 2024
+
+Q1: What insurance plans does MediCare Health System accept?
+A: MediCare Health System accepts a wide range of insurance plans including:
+- Government schemes: Ayushman Bharat - PM-JAY, Central Government Health Scheme (CGHS), ECHS (Ex-Servicemen), ESI (Employees' State Insurance)
+- Private insurers: Star Health, HDFC Ergo, Niva Bupa (formerly Max Bupa), ICICI Lombard, Care Health Insurance, New India Assurance, United India Insurance, Oriental Insurance
+- Corporate TPA (Third Party Administrator) plans tied to employer health benefits
+- International travel insurance for medical tourists (select packages only)
+A full list of accepted insurance providers is available at our billing desk and on the patient portal.
+
+Q2: How do I verify my insurance eligibility before my appointment?
+A: You can verify eligibility through:
+1. Patient Portal: Log in > My Insurance > Check Eligibility.
+2. Call the Insurance Helpdesk: 1800-MED-INSURE (1800-633-4678), available Mon–Sat, 9 AM–6 PM.
+3. In-person: Visit the insurance desk at the hospital entrance at least 30 minutes before your appointment.
+It is recommended to verify eligibility at least 48 hours before your scheduled appointment.
+
+Q3: What documents do I need to present for cashless hospitalization?
+A: For cashless hospitalization, bring:
+- Original government-issued photo ID (Aadhaar, PAN, Passport, Voter ID)
+- Insurance policy document or e-insurance card
+- TPA card (if applicable)
+- Doctor's referral letter (for planned admissions)
+- All previous medical records relevant to the condition
+Documents must be submitted to the insurance desk at least 2 hours before admission for planned procedures.
+
+Q4: What is the cashless hospitalization process?
+A: The process is as follows:
+1. Submit required documents at the insurance desk.
+2. Our team sends a pre-authorization request to your insurer or TPA.
+3. Insurer approves or requests additional documents (typically within 4–6 hours for planned admissions, 2 hours for emergencies).
+4. Once approved, your hospitalization is covered up to the approved limit without upfront payment.
+5. Any costs beyond the approved limit or excluded items must be paid out-of-pocket at discharge.
+
+Q5: What is NOT covered under most insurance plans?
+A: Common exclusions (vary by policy — always verify with your insurer):
+- Pre-existing conditions during the waiting period (typically 2–4 years depending on policy)
+- Cosmetic or aesthetic procedures not medically necessary
+- Self-inflicted injuries
+- Experimental or investigational treatments
+- Dental and vision care (unless specifically included)
+- Maternity expenses during the initial waiting period
+- Non-allopathic treatments (AYUSH) unless explicitly covered
+- OPD (outpatient) expenses unless OPD rider is included
+
+Q6: How do I file a reimbursement claim?
+A: For reimbursement (when cashless was not availed):
+1. Pay the hospital bill in full at the time of discharge.
+2. Collect original bills, prescriptions, discharge summary, and investigation reports.
+3. Submit the claim form (available at billing desk or insurer's website) along with all original documents to your insurer within 30 days of discharge.
+4. MediCare's billing team can assist with claim documentation — contact billing@medicare-hs.com.
+
+Q7: What if my claim is denied?
+A: If your insurance claim is denied:
+- You will receive a written denial letter with the reason.
+- You may appeal the denial by submitting additional clinical documents to the insurer within 15 days.
+- MediCare's patient advocacy team can assist with the appeal — contact advocacy@medicare-hs.com.
+- If the appeal is also denied, you may escalate to the Insurance Ombudsman in your region.
+
+Q8: Does MediCare accept Ayushman Bharat (PM-JAY)?
+A: Yes. MediCare Health System is empaneled under the Ayushman Bharat PM-JAY scheme. Eligible beneficiaries can avail cashless treatment for listed medical and surgical procedures up to ₹5 lakhs per family per year. Eligibility is verified through the beneficiary's Ayushman card or mobile number-based e-card from the PM-JAY portal.
+
+Q9: How do I get an itemized bill for insurance purposes?
+A: Itemized bills can be requested:
+- At the billing desk during or after discharge.
+- Through the Patient Portal: Billing > Download Itemized Bill.
+- Via email: billing@medicare-hs.com (processing time: 2 business days).
+
+Q10: What is a co-payment and will I need to pay it?
+A: A co-payment (co-pay) is the fixed percentage of the bill that the patient pays out-of-pocket even with insurance. Whether co-pay applies depends on your specific policy. Common co-pay scenarios:
+- Senior citizen policies: often 20% co-pay.
+- Network hospital discount plans: may waive co-pay.
+- Government employee plans (CGHS): may have specific co-pay slabs.
+Always check your policy document or ask your insurer for your co-pay terms.

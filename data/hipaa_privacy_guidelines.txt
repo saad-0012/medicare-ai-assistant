@@ -1,0 +1,72 @@
+HIPAA PRIVACY AND DATA SECURITY GUIDELINES
+MediCare Health System — Compliance & Legal
+Version: 2.5 | Effective Date: January 2024
+
+INTRODUCTION
+MediCare Health System is fully committed to protecting the privacy and security of patient health information (PHI) in compliance with the Health Insurance Portability and Accountability Act (HIPAA) of 1996, and the HITECH Act of 2009. This document outlines patient rights, organizational obligations, and data handling standards.
+
+WHAT IS PROTECTED HEALTH INFORMATION (PHI)?
+PHI includes any information that can be used to identify a patient and relates to:
+- Past, present, or future physical or mental health conditions.
+- Provision of healthcare services.
+- Payment for healthcare services.
+
+PHI includes but is not limited to:
+- Name, address, date of birth, Social Security Number.
+- Medical record numbers, insurance IDs.
+- Dates of service, admission, discharge.
+- Diagnosis codes, lab results, clinical notes.
+- Photos, voice recordings, biometric data.
+- Electronic PHI (ePHI): any PHI stored, transmitted, or processed electronically.
+
+PATIENT RIGHTS UNDER HIPAA
+Patients have the following rights regarding their health information:
+1. Right to Access: Patients may request copies of their medical records within 30 days of request.
+2. Right to Amend: Patients may request corrections to their records if information is inaccurate.
+3. Right to an Accounting of Disclosures: Patients may request a log of who their information was shared with.
+4. Right to Restrict Disclosures: Patients may request restrictions on how their information is used or shared.
+5. Right to Confidential Communications: Patients may request to be contacted through specific channels (e.g., email only, not phone).
+6. Right to File a Complaint: Patients may file a HIPAA complaint with MediCare's Privacy Officer or with the U.S. Department of Health and Human Services (HHS).
+
+HOW WE USE AND SHARE YOUR HEALTH INFORMATION
+MediCare may use or share patient PHI for:
+- Treatment: Sharing information between treating physicians, specialists, and care teams.
+- Payment: Processing insurance claims and billing.
+- Operations: Quality improvement, audit, training, and administration.
+- Legal requirements: Court orders, public health reporting, law enforcement (as required by law).
+
+We will NOT use or share PHI for:
+- Marketing purposes without written patient authorization.
+- Sale of patient data to third parties.
+- Employment decisions without explicit consent.
+
+WRITTEN AUTHORIZATION
+For any use of PHI beyond treatment, payment, and operations, written authorization from the patient is required. Authorization forms are available at the registration desk or patient portal. Patients may revoke authorization at any time in writing.
+
+DATA SECURITY MEASURES
+MediCare implements administrative, physical, and technical safeguards:
+- All ePHI is encrypted at rest and in transit using AES-256 and TLS 1.3 protocols.
+- Access to patient data is role-based. Staff can only access information required for their job.
+- All access to the EHR system is logged and audited.
+- Multi-factor authentication (MFA) is required for all staff accessing patient systems remotely.
+- Physical records are stored in locked, access-controlled areas.
+- All staff complete mandatory annual HIPAA training.
+
+BREACH NOTIFICATION POLICY
+In the event of a data breach involving PHI:
+- Affected patients will be notified within 60 days of breach discovery.
+- If more than 500 patients are affected, HHS and local media will be notified within 60 days.
+- All breaches, regardless of size, are logged in the breach registry.
+- Patients will receive instructions on protective steps (e.g., credit monitoring if financial data is involved).
+
+BUSINESS ASSOCIATES
+MediCare works with third-party vendors (Business Associates) who may access PHI. All Business Associates must sign a Business Associate Agreement (BAA) committing to HIPAA-compliant handling of PHI. MediCare maintains a register of all active Business Associate Agreements.
+
+MINIMUM NECESSARY STANDARD
+MediCare follows the "minimum necessary" standard: staff access and share only the minimum amount of PHI required to accomplish the intended purpose.
+
+CONTACT THE PRIVACY OFFICER
+For questions, concerns, or to file a complaint:
+- Privacy Officer: privacy@medicare-hs.com
+- Phone: 1800-MED-PRIV (1800-633-7748)
+- Address: MediCare Compliance Office, 4th Floor, MediCare Tower, Baner, Pune - 411045

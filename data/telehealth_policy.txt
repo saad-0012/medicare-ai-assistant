@@ -1,0 +1,61 @@
+TELEHEALTH CONSULTATION GUIDELINES
+MediCare Health System — Policy Document
+Version: 2.1 | Effective Date: January 2024
+
+OVERVIEW
+Telehealth services allow patients to consult with licensed healthcare providers remotely via video or audio calls. MediCare Health System provides telehealth for eligible patients across general medicine, follow-up care, mental health, and chronic disease management.
+
+ELIGIBILITY
+Patients are eligible for telehealth consultations if:
+- They are registered patients of MediCare Health System.
+- They have a stable internet connection or mobile data connection.
+- The condition does not require physical examination or in-person diagnostic tests.
+- They have completed the telehealth consent form (available at the patient portal).
+
+SCHEDULING A TELEHEALTH APPOINTMENT
+1. Log in to the MediCare Patient Portal at portal.medicare-hs.com.
+2. Select "Book Appointment" and choose "Telehealth / Virtual Visit".
+3. Select preferred department: General Medicine, Mental Health, Dermatology, or Endocrinology.
+4. Choose an available date and time slot.
+5. Confirm the appointment. A confirmation email with a video link will be sent 24 hours before the session.
+
+Patients can also call the helpline at 1800-MED-CARE (1800-633-2273) to book telehealth appointments.
+
+MEDICATION REFILL REQUESTS VIA TELEHEALTH
+Medication refill requests may be reviewed during telehealth visits under the following conditions:
+- The medication is already prescribed by a MediCare physician.
+- The medication does not require an in-person evaluation (e.g., controlled substances require in-person visit).
+- The patient has not had significant side effects since the last prescription.
+- The prescribing physician approves the refill after reviewing patient history.
+
+Controlled substances including Schedule II medications (e.g., opioids, stimulants) cannot be refilled via telehealth and require an in-person consultation.
+
+TECHNICAL REQUIREMENTS
+- Device: Smartphone, tablet, or computer with camera and microphone.
+- Recommended browsers: Chrome, Firefox, Edge (latest versions).
+- Internet speed: Minimum 2 Mbps for stable video quality.
+- Backup option: Audio-only call if video is unavailable.
+
+PRIVACY AND SECURITY
+All telehealth sessions are encrypted using end-to-end encryption compliant with HIPAA standards. Sessions are not recorded without explicit written consent from the patient. Providers access patient records securely via the internal EHR system during the call.
+
+CANCELLATION POLICY
+- Cancellations must be made at least 4 hours before the scheduled appointment.
+- No-shows without prior notice may be subject to a nominal cancellation fee.
+- Rescheduling is available up to 2 times per appointment without penalty.
+
+AVAILABLE DEPARTMENTS FOR TELEHEALTH
+- General Medicine (Mon–Sat, 8 AM–8 PM)
+- Mental Health & Counseling (Mon–Fri, 9 AM–6 PM)
+- Dermatology (Tue, Thu, Sat, 10 AM–4 PM)
+- Endocrinology (Mon, Wed, Fri, 11 AM–3 PM)
+- Pediatrics (Mon–Fri, 9 AM–5 PM)
+- Cardiology (Mon, Wed, 10 AM–2 PM)
+- Orthopedics (Tue, Thu, 9 AM–1 PM)
+
+LIMITATIONS OF TELEHEALTH
+Telehealth is NOT appropriate for:
+- Medical emergencies (call 112 or visit nearest emergency room).
+- Conditions requiring physical examination, imaging, or lab tests.
+- Surgical consultations or pre-operative evaluations.
+- Patients who are unable to communicate verbally without assistance.
