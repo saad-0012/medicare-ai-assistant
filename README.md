@@ -1,13 +1,18 @@
 # 🏥 MediAssist — Healthcare AI Assistant
 
 > **RAG-powered healthcare AI built for MediCare Health System**
-> Built with Ollama (Llama 3) · ChromaDB · FastAPI · sentence-transformers
+> Llama 3 (local, GPU) · ChromaDB · FastAPI · sentence-transformers · Docker
+
+---
+
+## 🎥 Demo Video
+[Watch Demo](https://drive.google.com/file/d/1FOZv3SLKTTni33hibIOyvGMfVhTQxa8j/view?usp=drive_link) 
 
 ---
 
 ## What This Is
 
-MediAssist is a production-grade prototype AI assistant that answers patient questions grounded in healthcare policy documents. It uses a full Retrieval-Augmented Generation (RAG) pipeline with a locally-running LLM, an agentic router, and a clean chat UI — all running entirely on-premise with no external AI API calls.
+MediAssist is a production-grade prototype AI assistant that answers patient questions grounded in healthcare policy documents. It uses a full Retrieval-Augmented Generation (RAG) pipeline with a locally-running LLM (Llama 3 via Ollama), an agentic router, and a clean chat UI — running entirely on-premise with zero external AI API calls. No patient data ever leaves the machine.
 
 ---
 
@@ -33,7 +38,8 @@ User Question
                                        │
                                        ▼
                                Ollama (Llama 3)
-                               Local LLM Generation
+                               Local GPU Inference
+                               RTX 3050 · ~3-6s
                                        │
                                        ▼
                                Grounded Answer
@@ -43,22 +49,22 @@ User Question
 
 **Document Ingestion Flow:**
 ```
-data/*.txt  →  Text Chunking  →  Embeddings (all-MiniLM-L6-v2)  →  ChromaDB
+data/*.txt → Chunking (600 chars) → Embeddings (all-MiniLM-L6-v2) → ChromaDB
 ```
 
 ---
 
 ## Tech Stack
 
-| Component         | Tool / Library                          | Reason                                    |
-|-------------------|-----------------------------------------|-------------------------------------------|
-| LLM               | Ollama · Llama 3 (local)                | On-premise, bonus points, no API cost     |
-| Embeddings        | sentence-transformers/all-MiniLM-L6-v2  | Free, fast, no API key, 384-dim vectors   |
-| Vector Database   | ChromaDB (persistent)                   | Simple, file-based, no extra service      |
-| Backend           | FastAPI + Uvicorn                       | Async, auto-docs, production-ready        |
-| Agent Framework   | Custom router logic                     | Lightweight, full control, no overhead    |
-| Frontend          | Vanilla HTML/CSS/JS                     | Zero deps, instant load, clean UI         |
-| Containerization  | Docker + docker-compose                 | Full bonus, reproducible, demo-ready      |
+| Component       | Tool                                   | Reason                                          |
+|-----------------|----------------------------------------|-------------------------------------------------|
+| LLM             | Ollama · Llama 3 8B (local GPU)        | On-premise, no PHI leakage, bonus points        |
+| Embeddings      | sentence-transformers/all-MiniLM-L6-v2 | Free, fast, no API key, 384-dim vectors         |
+| Vector Database | ChromaDB (persistent)                  | Simple, file-based, no extra service needed     |
+| Backend         | FastAPI + Uvicorn                      | Async, auto-docs, production-ready              |
+| Agent           | Custom router logic                    | Lightweight, full control, no overhead          |
+| Frontend        | Vanilla HTML/CSS/JS                    | Zero dependencies, instant load, clean UI       |
+| Containers      | Docker + docker-compose                | Reproducible, demo-ready, production-grade      |
 
 ---
 
@@ -71,7 +77,7 @@ healthcare-ai-assistant/
 │   ├── main.py          # FastAPI app, all endpoints
 │   ├── rag.py           # Document ingestion, chunking, ChromaDB retrieval
 │   ├── embeddings.py    # sentence-transformers wrapper
-│   ├── llm.py           # Ollama integration + system prompt
+│   ├── llm.py           # Ollama integration + prompt engineering
 │   ├── agent.py         # Query router + appointment mock tool
 │   └── config.py        # All configuration (env-driven)
 ├── data/
@@ -86,7 +92,7 @@ healthcare-ai-assistant/
 ├── vector_store/        # ChromaDB persisted data (auto-created)
 ├── tests/
 │   ├── conftest.py
-│   └── test_app.py      # Unit + integration tests
+│   └── test_app.py
 ├── .env.example
 ├── requirements.txt
 ├── Dockerfile
@@ -98,153 +104,157 @@ healthcare-ai-assistant/
 
 ## Setup & Run
 
-### Option 1: Local (Recommended for Demo)
+### ✅ Option 1: Docker Compose (Recommended)
 
 **Prerequisites:**
-- Python 3.11+
-- [Ollama](https://ollama.com) installed and running
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
+- [Ollama](https://ollama.com) installed locally with Llama 3 pulled
 
-**Step 1: Clone and install**
+**Step 1: Pull Llama 3**
 ```bash
-git clone https://github.com/your-username/healthcare-ai-assistant.git
-cd healthcare-ai-assistant
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-**Step 2: Start Ollama and pull Llama 3**
-```bash
-ollama serve                   # In a separate terminal (if not already running)
 ollama pull llama3
 ```
 
-**Step 3: Configure environment**
+**Step 2: Clone and configure**
 ```bash
+git clone https://github.com/your-username/healthcare-ai-assistant.git
+cd healthcare-ai-assistant
 cp .env.example .env
-# .env is pre-configured for local use — no changes needed
 ```
 
-**Step 4: Start the server**
+**Step 3: Start with Docker Compose**
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+docker-compose up --build
 ```
 
-**Step 5: Ingest documents**
+**Step 4: Ingest documents**
 ```bash
-curl -X POST http://localhost:8000/ingest
+curl -X POST http://localhost:8000/ingest -H "Content-Type: application/json" -d "{}"
 ```
 
-**Step 6: Open the UI**
+**Step 5: Open the UI**
 ```
 http://localhost:8000
 ```
 
 ---
 
-### Option 2: Docker Compose (Full Bonus)
+### Option 2: Local (without Docker)
+
+**Prerequisites:** Python 3.11+, Ollama installed
 
 ```bash
-docker-compose up --build
-```
+# Clone
+git clone https://github.com/your-username/healthcare-ai-assistant.git
+cd healthcare-ai-assistant
 
-This starts **Ollama + MediAssist API** together. Ollama will pull Llama 3 automatically on first start (~4GB, takes a few minutes).
+# Install
+python -m venv venv
+venv\Scripts\activate        # Windows
+pip install -r requirements.txt
 
-Then ingest documents:
-```bash
-curl -X POST http://localhost:8000/ingest
+# Configure
+cp .env.example .env
+
+# Start Ollama (separate terminal)
+ollama serve
+
+# Start API
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Ingest
+curl -X POST http://localhost:8000/ingest -H "Content-Type: application/json" -d "{}"
 ```
 
 Open: `http://localhost:8000`
 
 ---
 
-## API Reference
+## Environment Configuration (.env)
 
-### `POST /ingest`
+```env
+# LLM
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3
 
-Ingest documents from the `/data` folder into ChromaDB.
+# Embeddings
+EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
 
-```bash
-curl -X POST http://localhost:8000/ingest \
-     -H "Content-Type: application/json" \
-     -d '{}'
-```
+# ChromaDB
+CHROMA_PERSIST_DIR=./vector_store
+CHROMA_COLLECTION=healthcare_docs
 
-**Response:**
-```json
-{
-  "status": "success",
-  "ingested_files": [
-    "telehealth_policy.txt",
-    "medication_refill_policy.txt",
-    "patient_discharge_instructions.txt",
-    "hipaa_privacy_guidelines.txt",
-    "insurance_eligibility_faq.txt",
-    "appointment_scheduling_policy.txt"
-  ],
-  "total_chunks": 87,
-  "message": "Successfully ingested 6 documents into 87 chunks."
-}
+# Ingestion
+DATA_DIR=./data
+CHUNK_SIZE=600
+CHUNK_OVERLAP=100
+
+# Retrieval
+TOP_K_RESULTS=5
+SIMILARITY_THRESHOLD=0.70
+
+# LLM Generation
+NUM_PREDICT=250
+
+# API
+API_HOST=0.0.0.0
+API_PORT=8000
+LOG_LEVEL=INFO
 ```
 
 ---
 
+## API Reference
+
+### `POST /ingest`
+Ingest all documents from `/data` into ChromaDB.
+```bash
+curl -X POST http://localhost:8000/ingest \
+     -H "Content-Type: application/json" -d "{}"
+```
+```json
+{
+  "status": "success",
+  "ingested_files": ["telehealth_policy.txt", "..."],
+  "total_chunks": 74,
+  "message": "Successfully ingested 6 documents into 74 chunks."
+}
+```
+
 ### `POST /ask`
-
 Ask a healthcare question.
-
 ```bash
 curl -X POST http://localhost:8000/ask \
      -H "Content-Type: application/json" \
-     -d '{"question": "Can a patient request a medication refill through telehealth?"}'
+     -d "{\"question\": \"Can a patient request a medication refill through telehealth?\"}"
 ```
-
-**Response:**
 ```json
 {
   "question": "Can a patient request a medication refill through telehealth?",
-  "answer": "Yes, patients can request medication refills through telehealth if the medication is already prescribed by a MediCare physician and does not require an in-person evaluation. Controlled substances including Schedule II medications cannot be refilled via telehealth and require an in-person consultation.",
+  "answer": "Yes, you can refill your non-controlled substance medication during a scheduled telehealth consultation. Controlled substances including Schedule II medications cannot be refilled via telehealth.",
   "sources": [
     {
       "document": "telehealth_policy.txt",
-      "chunk": "Medication refill requests may be reviewed during telehealth visits under the following conditions: The medication is already prescribed by a MediCare physician...",
-      "relevance_distance": 0.1823
+      "chunk": "Medication refill requests may be reviewed during telehealth visits...",
+      "relevance_distance": 0.18
     }
   ],
   "confidence": "high",
   "query_type": "knowledge",
   "tool_used": "rag_pipeline",
-  "route_reason": "General knowledge question — routed to RAG pipeline.",
-  "response_time_ms": 1842
+  "response_time_ms": 4558
 }
 ```
 
----
-
 ### `GET /health`
-
-Check system status.
-
 ```bash
 curl http://localhost:8000/health
 ```
-
-**Response:**
 ```json
 {
   "status": "healthy",
-  "vector_store": {
-    "total_chunks": 87,
-    "collection": "healthcare_docs",
-    "status": "ready"
-  },
-  "ollama": {
-    "ollama_running": true,
-    "configured_model": "llama3",
-    "model_available": true,
-    "available_models": ["llama3:latest"]
-  },
+  "vector_store": { "total_chunks": 74, "status": "ready" },
+  "ollama": { "ollama_running": true, "model_available": true, "configured_model": "llama3" },
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "version": "1.0.0"
 }
@@ -252,81 +262,72 @@ curl http://localhost:8000/health
 
 ---
 
-## Sample Questions & Answers
+## Sample Q&A
 
-| Question | Type | Routed To |
-|----------|------|-----------|
-| "Can I refill my medication via telehealth?" | Knowledge | RAG pipeline |
-| "Book a cardiology appointment for Monday" | Appointment | `check_available_slots` tool |
-| "I have chest pain and can't breathe" | Emergency | Emergency handler |
-| "What are my rights under HIPAA?" | Knowledge | RAG pipeline |
-| "What documents do I need for cashless hospitalization?" | Knowledge | RAG pipeline |
-| "What can't be covered by insurance?" | Knowledge | RAG pipeline |
-| "What should I do after being discharged?" | Knowledge | RAG pipeline |
-
-**Unknown information example:**
-```json
-{
-  "question": "What is the hospital's Wi-Fi password?",
-  "answer": "I could not find this information in the provided documents. Please contact MediCare Health System directly at 1800-MED-CARE for assistance.",
-  "confidence": "none"
-}
-```
+| Question | Answer Type | Response |
+|----------|-------------|----------|
+| Can I refill medication via telehealth? | ✅ RAG | Yes, non-controlled substances only |
+| What documents for cashless hospitalization? | ✅ RAG | Lists Aadhaar, insurance card, TPA card... |
+| Book cardiology appointment Monday | ✅ Appointment Tool | Shows available slots |
+| Heart specialist slots tomorrow | ✅ Appointment Tool | Cardiology not available Tuesday, shows alternatives |
+| I have chest pain and can't breathe | 🚨 Emergency | Call 112 immediately |
+| What antibiotic for red rash? | ❌ Safe Refusal | Not in documents, contact doctor |
+| What's the hospital Wi-Fi password? | ❌ Safe Refusal | Not in documents |
 
 ---
 
 ## Prompt Engineering Strategy
 
-The system prompt in `app/llm.py` enforces:
+System prompt in `app/llm.py` is intentionally concise for faster inference:
 
 ```
-You are MediAssist, a professional AI healthcare assistant for MediCare Health System.
-
-STRICT RULES:
-1. Answer ONLY using information explicitly present in the provided context.
-2. If information is not in context, respond: "I could not find this information..."
-3. Do NOT guess, infer, or fabricate information.
-4. Do NOT provide personal medical diagnoses or drug prescriptions.
-5. For emergencies, always direct to 112 or nearest Emergency Room.
-6. Maintain professional, empathetic, clear tone.
+You are MediAssist, a helpful healthcare assistant for MediCare Health System.
+- Answer ONLY from provided context. No outside knowledge.
+- Only say "I could not find this" if context has NO relevant info.
+- Never diagnose or prescribe medication.
+- For emergencies, direct to 112 or ER.
+- Keep answers under 4 sentences.
 ```
 
-**LLM settings:** `temperature=0.1` for maximum factual consistency.
+Key decisions:
+- `temperature: 0.15` — near-deterministic, factual answers
+- `num_ctx: 1024` — sufficient for 3 chunks + question
+- `num_predict: 250` — complete answers without runaway generation
 
 ---
 
 ## Agentic Workflow
 
-The agent in `app/agent.py` implements a **three-way router**:
+Three-way router in `app/agent.py`:
 
 ```
 Query → classify_query() → [EMERGENCY | APPOINTMENT | KNOWLEDGE]
                                ↓              ↓              ↓
-                       emergency_       check_available_  rag_
-                       handler()        slots()          pipeline
+                        emergency_      check_available_   rag_
+                        handler()        slots()          pipeline
 ```
 
-**Priority order:** Emergency > Appointment > Knowledge
+Priority order: **Emergency > Appointment > Knowledge**
 
-The `check_available_slots(department, day)` tool supports:
-- Natural language department aliases: "heart" → cardiology, "child" → pediatrics
-- Day normalization: "today" → monday, "tomorrow" → tuesday, etc.
-- Graceful fallback if department/day not found
+`check_available_slots(department, day)` supports natural language:
+- "heart specialist" → cardiology
+- "tomorrow" → tuesday
+- "child doctor" → pediatrics
 
 ---
 
 ## Dataset
 
-All documents are **100% synthetic** — no real patient data or PHI.
+All 6 documents are 100% synthetic — no real PHI.
 
 | File | Content |
 |------|---------|
-| `telehealth_policy.txt` | Telehealth eligibility, scheduling, medication refills via virtual visits |
+| `telehealth_policy.txt` | Eligibility, scheduling, medication refills via virtual visits |
 | `medication_refill_policy.txt` | Refill channels, controlled substance rules, chronic disease management |
-| `patient_discharge_instructions.txt` | Post-hospitalization care, wound care, activity restrictions, emergency signs |
-| `hipaa_privacy_guidelines.txt` | Patient rights, PHI definition, security measures, breach notification |
-| `insurance_eligibility_faq.txt` | Accepted plans, cashless hospitalization, claim process, PM-JAY |
-| `appointment_scheduling_policy.txt` | Booking channels, department schedules, rescheduling/cancellation policy |
+| `patient_discharge_instructions.txt` | Post-hospital care, wound care, emergency signs |
+| `hipaa_privacy_guidelines.txt` | Patient rights, PHI definition, breach notification |
+| `insurance_eligibility_faq.txt` | Accepted plans, cashless process, PM-JAY, claim filing |
+| `appointment_scheduling_policy.txt` | Booking channels, department schedules, cancellation policy |
 
 ---
 
@@ -336,22 +337,14 @@ All documents are **100% synthetic** — no real patient data or PHI.
 pytest tests/ -v
 ```
 
-Tests cover: query classification, appointment extraction, text chunking, API endpoint validation, routing logic.
-
 ---
 
-## Security & PHI Compliance Notes
+## Security & PHI Compliance
 
-- **No real PHI** is used anywhere in this system.
-- All documents are synthetic.
-- The system prompt explicitly prevents the LLM from giving medical diagnoses.
-- In production, the following would be added:
-  - JWT authentication on API endpoints
-  - Rate limiting per user/IP
-  - Audit logging for all queries
-  - PHI detection layer before document ingestion
-  - HTTPS/TLS termination at reverse proxy
-  - Encryption at rest for ChromaDB storage
+- No real PHI anywhere in this system
+- LLM runs fully local — zero data sent to external APIs
+- System prompt prevents medical diagnoses
+- Production additions would include: JWT auth, rate limiting, audit logging, PHI detection on ingest, HTTPS/TLS
 
 ---
 
@@ -359,17 +352,15 @@ Tests cover: query classification, appointment extraction, text chunking, API en
 
 | Limitation | Production Fix |
 |------------|---------------|
-| No authentication | Add JWT / OAuth2 |
-| Single-node ChromaDB | Migrate to Weaviate or Pinecone for scale |
-| Mock appointment tool | Integrate with real HMS/EHR system |
-| No query caching | Add Redis semantic cache |
-| English-only | Add multilingual embeddings |
-| No feedback loop | Add thumbs up/down + fine-tuning pipeline |
-| Document re-ingestion clears all data | Add incremental ingestion with document hashing |
-| No PHI detection | Add Presidio PII/PHI scanner on ingest |
+| No authentication | JWT / OAuth2 |
+| Mock appointment tool | Integrate real HMS/EHR |
+| No query caching | Redis semantic cache |
+| English only | Multilingual embeddings |
+| No PHI detection on ingest | Microsoft Presidio scanner |
+| Single-node ChromaDB | Weaviate / Pinecone for scale |
 
 ---
 
 ## Author
 
-Built for Mindbowser AI Engineer Hackathon Assignment.
+Built for Mindbowser AI Engineer Hackathon.

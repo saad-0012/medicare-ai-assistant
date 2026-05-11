@@ -12,6 +12,13 @@ services:
     container_name: mediassist-ollama
     ports:
       - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     volumes:
       - ollama_data:/root/.ollama
     # Pull Llama 3 on first start
