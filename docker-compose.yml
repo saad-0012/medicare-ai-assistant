@@ -6,6 +6,7 @@ version: "3.9"
 
 services:
 
+
   # ── Ollama — Local LLM Server ───────────────────────────────────────────────
   ollama:
     image: ollama/ollama:latest
@@ -21,15 +22,15 @@ services:
               capabilities: [gpu]
     volumes:
       - ollama_data:/root/.ollama
-    # Pull Llama 3 on first start
-    entrypoint: ["/bin/sh", "-c", "ollama serve & sleep 5 && ollama pull llama3 && wait"]
+    # Simply serve the model locally without checking for network updates on every boot
+    entrypoint: ["ollama", "serve"]
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
-      interval: 30s
+      interval: 10s
       timeout: 10s
-      retries: 5
-      start_period: 120s
+      retries: 12
+      start_period: 60s
 
   # ── MediAssist API ──────────────────────────────────────────────────────────
   mediassist:
@@ -46,10 +47,11 @@ services:
       CHROMA_PERSIST_DIR: /app/vector_store
       CHROMA_COLLECTION: healthcare_docs
       DATA_DIR: /app/data
-      CHUNK_SIZE: "500"
-      CHUNK_OVERLAP: "80"
-      TOP_K_RESULTS: "4"
-      SIMILARITY_THRESHOLD: "0.35"
+      CHUNK_SIZE: "600"
+      CHUNK_OVERLAP: "100"
+      TOP_K_RESULTS: "5"
+      SIMILARITY_THRESHOLD: "0.70"
+      NUM_PREDICT: "250"
       API_HOST: "0.0.0.0"
       API_PORT: "8000"
       LOG_LEVEL: INFO

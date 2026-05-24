@@ -31,7 +31,7 @@ WORKDIR /app
 COPY app/ ./app/
 COPY data/ ./data/
 COPY static/ ./static/
-COPY .env.example .env
+COPY .env .env
 
 # Create vector store directory
 RUN mkdir -p vector_store
